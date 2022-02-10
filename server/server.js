@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.static('pubic'))
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.js'))
+    res.sendFile(path.join(__dirname, '../public/index.html'))
 }) 
     
 const port = process.env.PORT || 5050
