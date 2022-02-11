@@ -19,12 +19,13 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'))
 }) 
-
+// try catch block
 app.get('/rollbar-test', (req, res) => {
     try{
         test()
     } catch(error) {
-        rollbar.warning(error)
+        rollbar.error('not working')
+        res.sendStatus(400)
     }
 })
 
