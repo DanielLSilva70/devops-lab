@@ -3,6 +3,9 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const app = express()
+app.use(express.json())
+app.use(cors())
+app.use(express.static('public'))
 
 const Rollbar = require("rollbar");
 // const { allowedNodeEnvironmentFlags } = require('process')
@@ -13,9 +16,6 @@ const rollbar = new Rollbar({
 });
 rollbar.log('Hello world')
 rollbar.log('welp')
-app.use(express.json())
-app.use(cors())
-app.use(express.static('public'))
 // try catch block
 app.get('/rollbar-test', (req, res) => {
     try{
