@@ -14,8 +14,8 @@ const rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true
 });
-rollbar.log('Hello world')
-rollbar.log('welp')
+// rollbar.log('Hello world')
+// rollbar.log('welp')
 // try catch block
 app.get('/rollbar-test', (req, res) => {
     try{
