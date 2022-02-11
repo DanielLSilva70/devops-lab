@@ -15,20 +15,21 @@ rollbar.log('Hello world')
 rollbar.log('welp')
 app.use(express.json())
 app.use(cors())
-// app.use(express.static('public'))
+app.use(express.static('public'))
 // try catch block
-app.get('/rollbar-test', (req, res) => {
-    try{
-        rollbar.log('user hit test endpoint')
-        test()
-    } catch(error) {
-        rollbar.error('not working')
-        res.sendStatus(400)
-    }
-})
+// app.get('/rollbar-test', (req, res) => {
+//     try{
+//         rollbar.log('user hit test endpoint')
+//         test()
+//     } catch(error) {
+//         rollbar.error('not working')
+//         res.sendStatus(400)
+//     }
+// })
 
 
 app.get('/', (req, res) => {
+    rollbar.log('someone made it to the site')
     res.sendFile(path.join(__dirname, '../public/index.html'))
 })     
 
