@@ -14,11 +14,7 @@ const rollbar = new Rollbar({
 rollbar.log('Hello world')
 app.use(express.json())
 app.use(cors())
-app.use(express.static('public'))
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
-}) 
+// app.use(express.static('public'))
 // try catch block
 app.get('/rollbar-test', (req, res) => {
     try{
@@ -30,6 +26,10 @@ app.get('/rollbar-test', (req, res) => {
     }
 })
 
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
+})     
 
 
     
