@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 // try catch block
 app.get('/rollbar-test', (req, res) => {
     try{
+        rollbar.log('user hit test endpoint')
         test()
     } catch(error) {
         rollbar.error('not working')
