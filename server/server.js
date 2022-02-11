@@ -5,7 +5,7 @@ const path = require('path')
 const app = express()
 
 const Rollbar = require("rollbar");
-const { allowedNodeEnvironmentFlags } = require('process')
+// const { allowedNodeEnvironmentFlags } = require('process')
 const rollbar = new Rollbar({
   accessToken: process.env.ROLLBAR_TOKEN,
   captureUncaught: true,
