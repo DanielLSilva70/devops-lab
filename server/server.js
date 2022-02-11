@@ -12,6 +12,7 @@ const rollbar = new Rollbar({
   captureUnhandledRejections: true
 });
 rollbar.log('Hello world')
+rollbar.log('welp')
 app.use(express.json())
 app.use(cors())
 // app.use(express.static('public'))
